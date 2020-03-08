@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+    <title>@ViewBag.Title Alba Designs </title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/bootstrap.css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/Site.css")
+    @Styles.Render("~/fontawesome-free-5.12.1-web")
+
+    <link href="~/fontawesome-free-5.12.1-web/css/all.css" rel="stylesheet">
+</head>
+<body>
+
+
+
+
+   
+
+    <div class="navbar navbar-inverse center ">
+       
+       <a class="btn visible-lg visible-md visible-sm " href="@Url.Action("Cart", "Home")" > <i class="fa fa-shopping-cart fa-500px"> </i></a>
+        <div class="container">
+           
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+               
+                <a class="btnsm visible-xs"  href="@Url.Action("Cart", "Home")"> <i class="fa fa-shopping-cart fa-500px"> </i></a>
+            </div>
+
+
+
+
+
+            <div class="container-center">
+
+                <div class="visible-xs"><h1 style=" color: #F35588; margin-top: -20px; ">Alba Designs</h1></div>
+
+                <div class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav visible-lg visible-md visible-sm ">
+                        <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "navlink" })</li>
+                        <li>@Html.ActionLink("Designs", "Designs", "Home", new { @class = "navlink" })</li>
+                        <li>@Html.ActionLink("Alba Designs", "Index", "Home", new { @Style = "font-size: xxx-large; color: #F35588;" })</li>
+                        <li>@Html.ActionLink("Products", "Products", "Home", new { @class = "navlink" })</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home", new { @class = "navlink" })</li>
+                    </ul>
+
+                    <ul class="nav navbar-nav visible-xs">
+                        <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "navlink" })</li>
+                        <li>@Html.ActionLink("Designs", "Designs", "Home", new { @class = "navlink" })</li>
+
+                        <li>@Html.ActionLink("Products", "Products", "Home", new { @class = "navlink" })</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home", new { @class = "navlink" })</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+
+        <footer>
+            <p>&copy; @DateTime.Now.Year</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
