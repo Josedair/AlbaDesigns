@@ -1737,7 +1737,9 @@
     <Content Include="Images\1580972479323.png" />
     <Content Include="Images\Grey_full.png" />
     <Content Include="Images\mug.jpg" />
+    <Content Include="Images\TOMATE%28LEFT%29.png" />
     <Content Include="Images\unnamed.jpg" />
+    <Content Include="Images\watermelon.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Dockerfile" />
