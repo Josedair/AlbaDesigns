@@ -6188,10 +6188,10 @@ a.badge:focus {
 }
 
 .jumbotron {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin-bottom: 30px;
-    margin-top: 80px;
+    padding-top: 5px;
+    padding-bottom: 00px;
+    margin-bottom: 0px;
+    margin-top: 0px;
     color: #F35588;
     background-color: #FFBBB4;
 }
