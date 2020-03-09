@@ -6188,8 +6188,8 @@ a.badge:focus {
 }
 
 .jumbotron {
-    padding-top: 5px;
-    padding-bottom: 00px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     margin-bottom: 0px;
     margin-top: 0px;
     color: #F35588;
@@ -6225,8 +6225,8 @@ a.badge:focus {
 
 @media screen and (min-width: 768px) {
     .jumbotron {
-        padding-top: 48px;
-        padding-bottom: 48px;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
 
     .container .jumbotron,
@@ -7706,6 +7706,7 @@ button.close {
 
 .carousel {
     position: relative;
+    margin-bottom: 50px;
 }
 
 .carousel-inner {
