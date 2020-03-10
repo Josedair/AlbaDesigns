@@ -130,6 +130,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\AlbaDesigns.mdf" />
+    <Content Include="App_Data\AlbaDesigns_log.ldf">
+      <DependentUpon>AlbaDesigns.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\Database1.mdf" />
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
