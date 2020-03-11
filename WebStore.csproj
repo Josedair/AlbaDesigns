@@ -48,10 +48,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SqlClient.4.8.1\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -124,8 +133,45 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Image_uploadController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBmodel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBmodel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBmodel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBmodel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBmodel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Image_upload.cs">
+      <DependentUpon>DBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\test.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -134,9 +180,9 @@
     <Content Include="App_Data\AlbaDesigns_log.ldf">
       <DependentUpon>AlbaDesigns.mdf</DependentUpon>
     </Content>
-    <Content Include="App_Data\Database1.mdf" />
-    <Content Include="App_Data\Database1_log.ldf">
-      <DependentUpon>Database1.mdf</DependentUpon>
+    <Content Include="App_Data\StoreBase.mdf" />
+    <Content Include="App_Data\StoreBase_log.ldf">
+      <DependentUpon>StoreBase.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\Site.css" />
@@ -1744,6 +1790,27 @@
     <Content Include="Images\TOMATE%28LEFT%29.png" />
     <Content Include="Images\unnamed.jpg" />
     <Content Include="Images\watermelon.png" />
+    <Content Include="Images\watermelon2.png" />
+    <Content Include="Models\DBmodel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DBmodel.Context.cs</LastGenOutput>
+      <DependentUpon>DBmodel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\DBmodel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBmodel.edmx</DependentUpon>
+      <LastGenOutput>DBmodel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Dockerfile" />
@@ -1804,6 +1871,20 @@
     <Content Include="fontawesome-free-5.12.1-web\webfonts\fa-solid-900.ttf" />
     <Content Include="fontawesome-free-5.12.1-web\webfonts\fa-solid-900.woff" />
     <Content Include="fontawesome-free-5.12.1-web\webfonts\fa-solid-900.woff2" />
+    <EntityDeploy Include="Models\DBmodel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBmodel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DBmodel.edmx.diagram">
+      <DependentUpon>DBmodel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\AlbaDesigns - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\AlbaDesigns - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\AlbaDesigns - Web Deploy.pubxml" />
@@ -1835,11 +1916,12 @@
     <Content Include="Views\Home\Designs.cshtml" />
     <Content Include="Views\Home\Products.cshtml" />
     <Content Include="Views\Home\Cart.cshtml" />
+    <Content Include="Views\Image_upload\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\" />
     <Folder Include="FontAwesome\" />
-    <Folder Include="Models\" />
+    <Folder Include="ImageUploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -1849,6 +1931,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
