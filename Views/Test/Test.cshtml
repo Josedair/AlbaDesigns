@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Test";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<h2></h2>
+
+
+    <table id=" tbldata">
+        <tr>
+            <th> ProductID </th>
+            <th> Product Name </th>
+        </tr>
+        </table>
+    
+    <script>
+        $(function () {
+            $.get("get_data", {}, function (data) {
+                var row;
+                $.each(data, function (i, v1) {
+                    row+= "<tr><td>" +v1.ProductID+"</td></tr>" +v1.ProductName+ "</td></tr>"
+                })
+                $("#tbldata").append(row)
+            })
+        })
+        </script>
+</body>
+
+</html>

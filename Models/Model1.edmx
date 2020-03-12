@@ -4,43 +4,81 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AlbaDesignsModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="test">
+      <Schema Namespace="AlbaDesignsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Image_upload">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="ImageID" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="name" Type="nchar" MaxLength="10" />
+          <Property Name="ImageID" Type="int" Nullable="false" />
+          <Property Name="Tittle" Type="varchar" MaxLength="250" />
+          <Property Name="ImagePath" Type="varchar(max)" />
         </EntityType>
-        <EntityContainer Name="AlbaDesignsModel1StoreContainer">
-          <EntitySet Name="test" EntityType="Self.test" Schema="dbo" store:Type="Tables" />
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\JOSEDAIRGUERRERODOMI\SOURCE\REPOS\WEBSTORE\APP_DATA\ALBADESIGNS.MDF.dbo.imageUpload_TBL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="imageUpload_TBL">
+          <Key>
+            <PropertyRef Name="imageID" />
+          </Key>
+          <Property Name="imageID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="250" />
+          <Property Name="ImagePath" Type="varchar(max)" />
+        </EntityType>
+        <EntityContainer Name="AlbaDesignsModelStoreContainer">
+          <EntitySet Name="Image_upload" EntityType="Self.Image_upload" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="imageUpload_TBL" EntityType="Self.imageUpload_TBL" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [imageUpload_TBL].[imageID] AS [imageID], 
+    [imageUpload_TBL].[Title] AS [Title], 
+    [imageUpload_TBL].[ImagePath] AS [ImagePath]
+    FROM [dbo].[imageUpload_TBL] AS [imageUpload_TBL]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="AlbaDesignsModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="test">
+      <Schema Namespace="AlbaDesignsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Image_upload">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="ImageID" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ImageID" Type="Int32" Nullable="false" />
+          <Property Name="Tittle" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="AlbaDesignsEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="tests" EntityType="Self.test" />
+        <EntityType Name="imageUpload_TBL">
+          <Key>
+            <PropertyRef Name="imageID" />
+          </Key>
+          <Property Name="imageID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="AlbaDesignsEntities4" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Image_upload" EntityType="Self.Image_upload" />
+          <EntitySet Name="imageUpload_TBL" EntityType="Self.imageUpload_TBL" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AlbaDesignsModel1StoreContainer" CdmEntityContainer="AlbaDesignsEntities1">
-          <EntitySetMapping Name="tests">
-            <EntityTypeMapping TypeName="AlbaDesignsModel1.test">
-              <MappingFragment StoreEntitySet="test">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="name" ColumnName="name" />
+        <EntityContainerMapping StorageEntityContainer="AlbaDesignsModelStoreContainer" CdmEntityContainer="AlbaDesignsEntities4">
+          <EntitySetMapping Name="Image_upload">
+            <EntityTypeMapping TypeName="AlbaDesignsModel.Image_upload">
+              <MappingFragment StoreEntitySet="Image_upload">
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="Tittle" ColumnName="Tittle" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="imageUpload_TBL">
+            <EntityTypeMapping TypeName="AlbaDesignsModel.imageUpload_TBL">
+              <MappingFragment StoreEntitySet="imageUpload_TBL">
+                <ScalarProperty Name="imageID" ColumnName="imageID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -60,7 +98,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
