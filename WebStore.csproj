@@ -241,6 +241,12 @@
       <Private>True</Private>
       <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.Data.3.2.7\lib\net45\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.WebData.3.2.7\lib\net45\WebMatrix.WebData.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
@@ -253,6 +259,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="Controllers\Products.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="DAL\Db.cs" />
     <Compile Include="Global.asax.cs">
@@ -1892,12 +1899,32 @@
     <Content Include="Global.asax" />
     <Content Include="Images\1580972479323.png" />
     <Content Include="Images\5924_NEONPNK_Blank__73507.1567944513.jpg" />
+    <Content Include="Images\angy.png" />
+    <Content Include="Images\astralProject.png" />
+    <Content Include="Images\astralProjectRed.png" />
     <Content Include="Images\BYETI30K.jpg" />
+    <Content Include="Images\crobat.png" />
+    <Content Include="Images\gloomy.png" />
     <Content Include="Images\Grey_full.png" />
+    <Content Include="Images\help.png" />
+    <Content Include="Images\help3.png" />
+    <Content Include="Images\idk.png" />
+    <Content Include="Images\lugia.png" />
     <Content Include="Images\MelomSticker.png" />
+    <Content Include="Images\melonMug.png" />
+    <Content Include="Images\melonTunbler.png" />
     <Content Include="Images\mug.jpg" />
+    <Content Include="Images\notGloomy.png" />
+    <Content Include="Images\periMug.png" />
+    <Content Include="Images\periSideye.png" />
+    <Content Include="Images\pointy.png" />
+    <Content Include="Images\R&amp;Bmug.png" />
     <Content Include="Images\RED&amp;BLUE.png" />
     <Content Include="Images\Shirt.jpg" />
+    <Content Include="Images\ShirtastralProject.png" />
+    <Content Include="Images\Shirt_astralProjectRed.png" />
+    <Content Include="Images\shroomill.png" />
+    <Content Include="Images\styledMelon.png" />
     <Content Include="Images\TOMATE%28LEFT%29.png" />
     <Content Include="Images\unnamed.jpg" />
     <Content Include="Images\watermelon.png" />
@@ -1964,6 +1991,8 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Images\watermelonDS.png" />
+    <Content Include="Images\watermelonShirt.png" />
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
@@ -2107,6 +2136,8 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Test\Test.cshtml" />
+    <Content Include="Views\BreadTest.cshtml" />
+    <Content Include="Views\Products\Mugs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="FontAwesome\" />

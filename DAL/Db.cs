@@ -11,13 +11,14 @@ namespace WebStore.DAL
 {
     public class Db
     {
-        readonly SqlConnection bobschemaConnectionString = new SqlConnection(ConfigurationManager.ConnectionStrings["bobschemaConnectionString"].ConnectionString);
+        readonly SqlConnection Bobsmyuncle = new SqlConnection(ConfigurationManager.ConnectionStrings["Bobsmyuncle"].ConnectionString);
 
-        string connectionString = @"Database={bobschema}; Data Source=bobmysql.mysql.database.azure.com; User Id=cse482@bobmysql; Password={$J0sen0s3!}";
+        //string connectionString = @"Database={bobschema}; Data Source=bobmysql.mysql.database.azure.com; User Id=cse482@bobmysql; Password={$J0sen0s3!}";
 
         public DataSet Show_data()
         {
-            SqlCommand com = new SqlCommand("Select * from product", bobschemaConnectionString);
+            
+            SqlCommand com = new SqlCommand("Select * from product", Bobsmyuncle);
             SqlDataAdapter da = new SqlDataAdapter(com);
             DataSet ds = new DataSet();
             da.Fill(ds);

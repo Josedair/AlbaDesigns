@@ -26,11 +26,7 @@ namespace WebStore.Controllers
 
             return View();
         }
-        public ActionResult Products()
-        {
-            ViewBag.Message = "Products Page";
-            return View();
-        }
+        
 
         public ActionResult Designs()
         {
@@ -41,6 +37,12 @@ namespace WebStore.Controllers
         public ActionResult Cart()
         {
             ViewBag.Message = "Designs Page";
+            return View();
+        }
+
+        public ActionResult Products()
+        {
+            ViewBag.Message = "Products Page";
             return View();
         }
     }
