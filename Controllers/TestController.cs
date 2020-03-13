@@ -17,11 +17,11 @@ namespace WebStore.Controllers
             return View();
         }
 
-        public JsonResult get_data()
+        public JsonResult Get_data()
         {
             DataSet ds = dbLayer.Show_data();
             List<product> listreg = new List<product>();
-            foreach (DataRow dr in ds.Tables[0].Rows)
+            foreach (DataRow dr in ds.Tables[3].Rows)
             {
                 listreg.Add(new product
                 {

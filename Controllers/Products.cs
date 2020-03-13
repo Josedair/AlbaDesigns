@@ -11,7 +11,7 @@ namespace WebStore.Controllers
         // GET: Products
         public ActionResult Mugs()
         {
-            return RedirectToAction("../Views/Products/Mugs");
+            return View();
 
         }
     }
